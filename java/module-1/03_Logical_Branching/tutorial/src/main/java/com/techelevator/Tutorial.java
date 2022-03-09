@@ -15,10 +15,12 @@ public class Tutorial {
                 System.out.println("**************************************");
 
                 // Step Two: Declare and initialize Weather Station variables
-
-
+                int highTemperatureF = 55;
+                boolean precipitationExpected = true;
+                final int FREEZING_TEMPERATURE_F = 32;
 
                 // Step Three: Report today's expected conditions to the user.
+                System.out.println();
 
 
 
