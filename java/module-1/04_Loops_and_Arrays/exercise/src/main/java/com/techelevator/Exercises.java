@@ -176,17 +176,45 @@ public class Exercises {
 	public int sum13(int[] nums) {
 		int sum = 0;
 		for (int i = 0; i < nums.length; i++) {
-			if (nums[i]==13) {
-				if (i+1<nums.length) {
-					i++;
-				} else {
-					break;
-				}
-				continue;
+			if (nums[i] != 13) {
+				sum += nums[i];
+			} else if (i+1 < nums.length) {
+				i++;
+			} else {
+				break;
 			}
-			sum += nums[i];
 		}
 		return sum;
+
+//		int sum = 0;
+//		int i = 0;
+//		while (i < nums.length) {
+//			if ((nums[i] == 13) && (i+1 <= nums.length)) {
+//				i+=2;
+//			} else if (nums[i] == 13){
+//				break;
+//			} else {
+//				sum += nums[i];
+//				i++;
+//			}
+//		}
+//		return sum;
+
+
+
+//		int sum = 0;
+//		for (int i = 0; i < nums.length; i++) {
+//			if (nums[i]==13) {
+//				if (i+1<nums.length) {
+//					i++;
+//				} else {
+//					break;
+//				}
+//				continue;
+//			}
+//			sum += nums[i];
+//		}
+//		return sum;
 	}
 	///////////////////////////////
 	/* I DONT UNDERSTAND THIS ONE*///////////////////////////////////////////////////////////
