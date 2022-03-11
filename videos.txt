@@ -16,3 +16,7 @@ Passcode: 0?b@Fjea
 1-4 Loops and Arrays
 https://techelevator.zoom.us/rec/share/4kDdf6AtDdl5rC3m0mL_3hFB6fWs4umFQkQkS4EUZWjWz5X53GAC9CqddLBCuies.varm5gz_yvO65Ft1
 Passcode: U3Z#T6MY
+
+1-5 Command Line Programs
+https://techelevator.zoom.us/rec/share/5F5uvoL22tdaPIg-94NHoeNUiz44OhPUdsXcE_Bf7Uwo2hIR4uRE4vZWxLEeFUiE.FrpPUWJzgkeooqsa
+Passcode: p@e5&5*f
