@@ -15,7 +15,7 @@ public class DecimalToBinary {
 
 		for (int i = 0; i < decimalArrayString.length; i++) {
 			int currentIndex = Integer.parseInt(decimalArrayString[i]);
-			System.out.println(Integer.toBinaryString(currentIndex));
+			System.out.println(decimalArrayString[i] + " in binary is " + (Integer.toBinaryString(currentIndex)));
 		}
 	}
 }
