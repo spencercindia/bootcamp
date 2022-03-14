@@ -13,7 +13,8 @@ public class DecimalToBinary {
 
 		String[] decimalArrayString = userDecimal.split(" ");
 
-		for (int i = 0; i < decimalArrayString.length; i++) {
+		for (int i = 0; i < decimalArrayString.length; i++)
+		{
 			int currentIndex = Integer.parseInt(decimalArrayString[i]);
 			System.out.println(decimalArrayString[i] + " in binary is " + (Integer.toBinaryString(currentIndex)));
 		}

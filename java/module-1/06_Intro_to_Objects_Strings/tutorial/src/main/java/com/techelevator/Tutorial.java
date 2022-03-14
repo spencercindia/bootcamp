@@ -7,6 +7,7 @@ public class Tutorial {
     public static void main(String[] args) {
 
         // ***********  Step 1: Use the *new* operator to create Strings on the Heap  *************
+        String myString = new;
 
 
 
