@@ -1,5 +1,7 @@
 package com.techelevator;
 
+import java.util.Arrays;
+
 public class Exercises {
 
 	/*
@@ -372,8 +374,17 @@ public class Exercises {
 		String upToLastTwo = str.substring(0, str.length()-1);
 		for (int i = 0; i < upToLastTwo.length(); i++)
 		{
-			
+			if (upToLastTwo.length() <= 2){
+				return myAmazingNewCount;
+			}
+			if (i + 1 < upToLastTwo.length())
+			{
+				if ((upToLastTwo.substring(i, i+2).equals(lastTwo))) {
+					myAmazingNewCount++;
+				}
+			}
 		}
+		return myAmazingNewCount;
 	}
 
 	/*
@@ -405,7 +416,13 @@ public class Exercises {
 	 stringYak("yak123ya") → "123ya"
 	 */
 	public String stringYak(String str) {
-		return null;
+		String[] myYaklessArray = str.split("yak");
+		String myYaklessString = "";
+		for (int i = 0; i < myYaklessArray.length; i++)
+		{
+			myYaklessString+=myYaklessArray[i];
+		}
+		return myYaklessString;
 	}
 
 }
