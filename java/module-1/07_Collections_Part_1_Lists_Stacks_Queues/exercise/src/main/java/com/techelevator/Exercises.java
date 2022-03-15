@@ -16,10 +16,14 @@ public class Exercises {
 	 */
 	public List<String> array2List(String[] stringArray) {
 		List<String> stringList = new ArrayList<>();
-		for (int i = 0; i < stringArray.length; i++){
-			stringList.add(stringArray[i]);
+		for (String element : stringArray){
+			stringList.add(element);
 		}
 		return stringList;
+//		for (int i = 0; i < stringArray.length; i++){
+//			stringList.add(stringArray[i]);
+//		}
+//		return stringList;
 	}
 
 	/*
@@ -30,6 +34,7 @@ public class Exercises {
 	 */
 	public String[] list2Array(List<String> stringList) {
 		String[] myStringArray = new String[stringList.size()];
+
 		for (int i = 0; i <stringList.size(); i++)
 		{
 			myStringArray[i]=stringList.get(i);
@@ -46,16 +51,26 @@ public class Exercises {
 	 */
 	public List<String> no4LetterWords(String[] stringArray) {
 		List<String> noFourLetterWords = new ArrayList<>();
-		for (int i = 0; i < stringArray.length; i++)
+		for (String each : stringArray)
 		{
-			if (stringArray[i].length()==4)
+			if (each.length()==4)
 			{
 				continue;
 			} else {
-				noFourLetterWords.add(stringArray[i]);
+				noFourLetterWords.add(each);
 			}
 		}
 		return noFourLetterWords;
+//		for (int i = 0; i < stringArray.length; i++)
+//		{
+//			if (stringArray[i].length()==4)
+//			{
+//				continue;
+//			} else {
+//				noFourLetterWords.add(stringArray[i]);
+//			}
+//		}
+//		return noFourLetterWords;
 	}
 
 	/*
@@ -66,12 +81,18 @@ public class Exercises {
 	 */
 	public List<Double> arrayInt2ListDouble(int[] intArray) {
 		List<Double> listOfHalves = new ArrayList<>();
-		for (int i = 0; i < intArray.length; i++)
+		for (Integer each : intArray)
 		{
-			double halfOf = intArray[i];
+			double halfOf = each;
 			listOfHalves.add(halfOf/2);
 		}
 		return listOfHalves;
+//		for (int i = 0; i < intArray.length; i++)
+//		{
+//			double halfOf = intArray[i];
+//			listOfHalves.add(halfOf/2);
+//		}
+//		return listOfHalves;
 	}
 
 	/*
@@ -92,14 +113,23 @@ public class Exercises {
 	 */
 	public List<Integer> oddOnly(Integer[] integerArray) {
 		List<Integer> listOfOdds = new ArrayList<>();
-		for (int i = 0; i < integerArray.length; i++)
+
+		for (Integer each : integerArray)
 		{
-			if (integerArray[i]%2 != 0 )
+			if (each%2 != 0 )
 			{
-				listOfOdds.add(integerArray[i]);
+				listOfOdds.add(each);
 			}
 		}
 		return listOfOdds;
+//		for (int i = 0; i < integerArray.length; i++)
+//		{
+//			if (integerArray[i]%2 != 0 )
+//			{
+//				listOfOdds.add(integerArray[i]);
+//			}
+//		}
+//		return listOfOdds;
 	}
 
 	/*
@@ -111,13 +141,20 @@ public class Exercises {
 	 */
 	public boolean foundIntTwice(List<Integer> integerList, int intToFind) {
 		int count = 0;
-		for (int i = 0; i < integerList.size(); i++) {
-			if (integerList.get(i)==intToFind)
+		for (Integer each : integerList) {
+			if (each==intToFind)
 			{
 				count++;
 			}
 		}
 		return count>=2;
+//		for (int i = 0; i < integerList.size(); i++) {
+//			if (integerList.get(i)==intToFind)
+//			{
+//				count++;
+//			}
+//		}
+//		return count>=2;
 	}
 
 	/*
@@ -134,21 +171,36 @@ public class Exercises {
 	 */
 	public List<String> fizzBuzzList(Integer[] integerArray) {
 		List<String> myFizzBuzzList = new ArrayList<>();
-		for (int i = 0; i < integerArray.length; i++) {
-			if (integerArray[i]%3==0 && integerArray[i]%5==0)
+		for (Integer each : integerArray) {
+			if (each%3==0 && each%5==0)
 			{
 				myFizzBuzzList.add("FizzBuzz");
-			} else if (integerArray[i]%3==0)
+			} else if (each%3==0)
 			{
 				myFizzBuzzList.add("Fizz");
-			}else if (integerArray[i]%5==0)
+			}else if (each%5==0)
 			{
 				myFizzBuzzList.add("Buzz");
 			} else {
-				myFizzBuzzList.add(integerArray[i].toString());
+				myFizzBuzzList.add(each.toString());
 			}
 		}
 		return myFizzBuzzList;
+//		for (int i = 0; i < integerArray.length; i++) {
+//			if (integerArray[i]%3==0 && integerArray[i]%5==0)
+//			{
+//				myFizzBuzzList.add("FizzBuzz");
+//			} else if (integerArray[i]%3==0)
+//			{
+//				myFizzBuzzList.add("Fizz");
+//			}else if (integerArray[i]%5==0)
+//			{
+//				myFizzBuzzList.add("Buzz");
+//			} else {
+//				myFizzBuzzList.add(integerArray[i].toString());
+//			}
+//		}
+//		return myFizzBuzzList;
 	}
 
 	/*
