@@ -1,7 +1,6 @@
 package com.techelevator;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Exercises {
 
@@ -16,7 +15,11 @@ public class Exercises {
 	 array2List( {"Left", "Right", "Forward", "Back"} )  ->  ["Left", "Right", "Forward", "Back"]
 	 */
 	public List<String> array2List(String[] stringArray) {
-		return null;
+		List<String> stringList = new ArrayList<>();
+		for (int i = 0; i < stringArray.length; i++){
+			stringList.add(stringArray[i]);
+		}
+		return stringList;
 	}
 
 	/*
@@ -26,7 +29,12 @@ public class Exercises {
 	 list2Array( ["Left", "Right", "Forward", "Back"] )  ->  {"Left", "Right", "Forward", "Back"}
 	 */
 	public String[] list2Array(List<String> stringList) {
-		return null;
+		String[] myStringArray = new String[stringList.size()];
+		for (int i = 0; i <stringList.size(); i++)
+		{
+			myStringArray[i]=stringList.get(i);
+		}
+		return myStringArray;
 	}
 
 	/*
@@ -37,7 +45,17 @@ public class Exercises {
 	 no4LetterWords( {"Jack", "Jill", "Jane", "John", "Jim"} )  ->  ["Jim"]
 	 */
 	public List<String> no4LetterWords(String[] stringArray) {
-		return null;
+		List<String> noFourLetterWords = new ArrayList<>();
+		for (int i = 0; i < stringArray.length; i++)
+		{
+			if (stringArray[i].length()==4)
+			{
+				continue;
+			} else {
+				noFourLetterWords.add(stringArray[i]);
+			}
+		}
+		return noFourLetterWords;
 	}
 
 	/*
@@ -47,7 +65,13 @@ public class Exercises {
 	 arrayInt2ListDouble( {84, 99, 3285, 13, 877} ) -> [42, 49.5, 1642.5, 6.5, 438.5]
 	 */
 	public List<Double> arrayInt2ListDouble(int[] intArray) {
-		return null;
+		List<Double> listOfHalves = new ArrayList<>();
+		for (int i = 0; i < intArray.length; i++)
+		{
+			double halfOf = intArray[i];
+			listOfHalves.add(halfOf/2);
+		}
+		return listOfHalves;
 	}
 
 	/*
@@ -57,7 +81,7 @@ public class Exercises {
 	 findLargest( [34070, 1380, 81238, 7782, 234, 64362, 627] ) -> 81238
 	 */
 	public Integer findLargest(List<Integer> integerList) {
-		return null;
+		return Collections.max(integerList);
 	}
 
 	/*
@@ -67,7 +91,15 @@ public class Exercises {
 	 oddOnly( {734, 233, 782, 811, 3, 9999} ) -> [233, 811, 3, 9999]
 	 */
 	public List<Integer> oddOnly(Integer[] integerArray) {
-		return null;
+		List<Integer> listOfOdds = new ArrayList<>();
+		for (int i = 0; i < integerArray.length; i++)
+		{
+			if (integerArray[i]%2 != 0 )
+			{
+				listOfOdds.add(integerArray[i]);
+			}
+		}
+		return listOfOdds;
 	}
 
 	/*
@@ -78,7 +110,14 @@ public class Exercises {
 	 foundIntTwice( [9, 23, 44, 2, 88, 44], 44) -> true
 	 */
 	public boolean foundIntTwice(List<Integer> integerList, int intToFind) {
-		return false;
+		int count = 0;
+		for (int i = 0; i < integerList.size(); i++) {
+			if (integerList.get(i)==intToFind)
+			{
+				count++;
+			}
+		}
+		return count>=2;
 	}
 
 	/*
@@ -94,7 +133,22 @@ public class Exercises {
 	HINT: To convert an Integer x to a String, you can use x.toString() in your code. For example, if x = 1, then x.toString() returns "1."
 	 */
 	public List<String> fizzBuzzList(Integer[] integerArray) {
-		return null;
+		List<String> myFizzBuzzList = new ArrayList<>();
+		for (int i = 0; i < integerArray.length; i++) {
+			if (integerArray[i]%3==0 && integerArray[i]%5==0)
+			{
+				myFizzBuzzList.add("FizzBuzz");
+			} else if (integerArray[i]%3==0)
+			{
+				myFizzBuzzList.add("Fizz");
+			}else if (integerArray[i]%5==0)
+			{
+				myFizzBuzzList.add("Buzz");
+			} else {
+				myFizzBuzzList.add(integerArray[i].toString());
+			}
+		}
+		return myFizzBuzzList;
 	}
 
 	/*
@@ -105,7 +159,58 @@ public class Exercises {
 	 interleaveLists( [1, 2, 3], [4, 5, 6] )  ->  [1, 4, 2, 5, 3, 6]
 	 */
 	public List<Integer> interleaveLists(List<Integer> listOne, List<Integer> listTwo) {
-		return null;
+		List<Integer> myInterleavedList = new ArrayList<>();
+
+		if (listOne.size() > listTwo.size())
+		{
+			for (int i = 0; i < listOne.size(); i++) {
+				if (i < listTwo.size()) {
+					myInterleavedList.add(listOne.get(i));
+					myInterleavedList.add(listTwo.get(i));
+				}else myInterleavedList.add(listOne.get(i));
+			}
+		} else
+		{
+			for (int i = 0; i < listTwo.size(); i++) {
+				if (i < listOne.size()) {
+					myInterleavedList.add(listOne.get(i));
+					myInterleavedList.add(listTwo.get(i));
+				}else myInterleavedList.add(listTwo.get(i));
+			}
+		}
+		return myInterleavedList;
+
+//		if (listOne.size() > listTwo.size())
+//		{
+//			for (int i = 0; i < listOne.size()+listTwo.size(); i++)
+//			{
+//				if (i <= listTwo.size())
+//				{
+//					myInterleavedList.add(listOne.get(i));
+//					myInterleavedList.add(listTwo.get(i));
+//				}
+//				myInterleavedList.add(listOne.get(i));
+//			}
+//		} else if (listTwo.size() > listOne.size()){
+//			for (int i = 0; i < listTwo.size()+listOne.size(); i++)
+//			{
+//				if (i <= listOne.size())
+//				{
+//					myInterleavedList.add(listOne.get(i));
+//					myInterleavedList.add(listTwo.get(i));
+//				}
+//				myInterleavedList.add(listTwo.get(i));
+//			}
+//		}
+//		else {
+//			for (int i = 0; i < listOne.size()+listTwo.size(); i++)
+//			{
+//				myInterleavedList.add(listOne.get(i));
+//				myInterleavedList.add(listTwo.get(i));
+//			}
+//		}
+//		return myInterleavedList;
+//
 	}
 
 }

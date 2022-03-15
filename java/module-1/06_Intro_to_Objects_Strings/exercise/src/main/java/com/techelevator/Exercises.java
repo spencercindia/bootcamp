@@ -227,11 +227,15 @@ public class Exercises {
 	 twoChar("java", 3) → "ja"
 	 */
 	public String twoChar(String str, int index) {
-		if (str.length() <= index + 2)
-		{
+		if (str.length()<=3 && index<1) {
+			return str.substring(0, 2);
+		} else if (index<0) {
+			return str.substring(0, 2);
+		}else if (index+2 <= str.length()) {
+			return str.substring(index, index+2);
+		} else {
 			return str.substring(0, 2);
 		}
-		return str.substring(index, index + 2);
 	}
 
 	/*
@@ -313,7 +317,17 @@ public class Exercises {
 	 countXX("xxxx") →
 	 */
 	public int countXX(String str) {
-		return 0;
+		int count = 0;
+		String[] stringAsArray = str.split("");
+
+		for (int i = 0; i < stringAsArray.length; i++) {
+			if (stringAsArray[i].equals("x")){
+				if ((i+1 <= (stringAsArray.length-1)) && (stringAsArray[i+1].equals("x"))){
+					count++;
+				}
+			}
+		}
+		return count;
 	}
 
 	/*
@@ -372,16 +386,12 @@ public class Exercises {
 		int myAmazingNewCount = 0;
 		String lastTwo = str.substring(str.length()-2);
 		String upToLastTwo = str.substring(0, str.length()-1);
+
 		for (int i = 0; i < upToLastTwo.length(); i++)
 		{
-			if (upToLastTwo.length() <= 2){
-				return myAmazingNewCount;
-			}
-			if (i + 1 < upToLastTwo.length())
-			{
-				if ((upToLastTwo.substring(i, i+2).equals(lastTwo))) {
-					myAmazingNewCount++;
-				}
+			if (upToLastTwo.contains(lastTwo)){
+				myAmazingNewCount++;
+				upToLastTwo.replace(lastTwo, "");
 			}
 		}
 		return myAmazingNewCount;
@@ -395,7 +405,17 @@ public class Exercises {
 	 stringX("xabxxxcdx") → "xabcdx"
 	 */
 	public String stringX(String str) {
-		return null;
+		String myXLessString = "";
+		for (int i = 0; i < str.length(); i++) {
+			if (i == 0 && str.charAt(i)=='x'){
+				myXLessString+=str.charAt(i);
+			} else if ((i == str.length()-1) && (str.charAt(i)== 'x')){
+				myXLessString+=str.charAt(i);
+			} else if (str.charAt(i) != 'x') {
+				myXLessString+= str.charAt(i);
+			}
+		}
+		return myXLessString;
 	}
 
 	/*
@@ -405,7 +425,13 @@ public class Exercises {
 	 altPairs("CodingHorror") → "Congrr"
 	 */
 	public String altPairs(String str) {
-		return null;
+		String myAltString = "";
+
+		for (int i = 0; i < str.length(); i++) {
+
+		}
+
+		return myAltString;
 	}
 
 	/*
