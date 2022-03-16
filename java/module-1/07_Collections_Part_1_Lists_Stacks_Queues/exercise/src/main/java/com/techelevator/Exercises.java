@@ -178,7 +178,7 @@ public class Exercises {
 			} else if (each%3==0)
 			{
 				myFizzBuzzList.add("Fizz");
-			}else if (each%5==0)
+			} else if (each%5==0)
 			{
 				myFizzBuzzList.add("Buzz");
 			} else {
