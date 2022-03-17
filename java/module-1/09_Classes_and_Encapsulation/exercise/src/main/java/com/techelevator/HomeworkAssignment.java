@@ -12,20 +12,7 @@ public class HomeworkAssignment {
     }
 
     public void findLetterGrade(){
-        double gradePercentage = earnedMarks*100 / possibleMarks;
-        if (gradePercentage >= 90){
-            this.letterGrade = "A";
-        } else if (gradePercentage >= 80){
-            this.letterGrade = "B";
-        } else if (gradePercentage >= 70){
-            this.letterGrade = "C";
-        } else if (gradePercentage >= 60){
-            this.letterGrade = "D";
-        } else if (gradePercentage < 59){
-            this.letterGrade = "F";
-        } else {
-            this.letterGrade = "";
-        }
+
     }
 
     public void setEarnedMarks(int earnedMarks) {
@@ -45,6 +32,20 @@ public class HomeworkAssignment {
     }
 
     public String getLetterGrade() {
+        double gradePercentage = earnedMarks*100 / possibleMarks;
+        if (gradePercentage >= 90){
+            this.letterGrade = "A";
+        } else if (gradePercentage >= 80){
+            this.letterGrade = "B";
+        } else if (gradePercentage >= 70){
+            this.letterGrade = "C";
+        } else if (gradePercentage >= 60){
+            this.letterGrade = "D";
+        } else if (gradePercentage < 59){
+            this.letterGrade = "F";
+        } else {
+            this.letterGrade = "";
+        }
         return letterGrade;
     }
 }
