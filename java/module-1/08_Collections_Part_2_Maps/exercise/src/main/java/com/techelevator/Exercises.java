@@ -249,7 +249,7 @@ public class Exercises {
 		}
 
 
-		for (Map.Entry<String, Integer> sku : largerMap.entrySet())
+		for (Map.Entry<String, Integer> sku : largerMap.keySet())
 		{
 			if (smallerMap.containsKey(sku))
 			{
@@ -275,7 +275,7 @@ public class Exercises {
 	 *
 	 */
 	public Map<String, Integer> last2Revisited(String[] words) {
-		return null;
+
 	}
 
 }
