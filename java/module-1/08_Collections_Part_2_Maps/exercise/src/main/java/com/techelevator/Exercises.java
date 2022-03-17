@@ -37,17 +37,13 @@ public class Exercises {
 		mapOfAnimalNames.put("giraffe", "Tower");
 		mapOfAnimalNames.put("crow", "Murder");
 		mapOfAnimalNames.put("walrus", "unknown");
+		mapOfAnimalNames.put("rhino", "Crash");
+		mapOfAnimalNames.put("deer", "Herd");
 
-		if (animalName == null || animalName.equals("")){
+		if (animalName == null){
 			return "unknown";
 		}
-		if (mapOfAnimalNames.containsKey(animalName.toLowerCase()))
-		{
-			return mapOfAnimalNames.get(animalName.toLowerCase());
-		} else
-		{
-			return "unknown";
-		}
+		return mapOfAnimalNames.getOrDefault(animalName.toLowerCase(), "unknown");
 
 	}
 
@@ -102,13 +98,16 @@ public class Exercises {
 	 *
 	 */
 	public Map<String, Integer> robPeterToPayPaul(Map<String, Integer> peterPaul) {
+
 		Map<String, Integer> outputAfterRobbery = new HashMap<>();
- 		if (peterPaul.get("Peter") > 0 && peterPaul.get("Paul") < 1000)
+
+		if (peterPaul.get("Peter") > 0 && peterPaul.get("Paul") < 1000)
 		{
 			outputAfterRobbery.put("Paul", (peterPaul.get("Peter")/2)+peterPaul.get("Paul"));
 			outputAfterRobbery.put("Peter", peterPaul.get("Peter")/2);
 			return outputAfterRobbery;
-		} else return peterPaul;
+		} else
+			return peterPaul;
 
 	}
 
@@ -122,16 +121,16 @@ public class Exercises {
 	 *
 	 */
 	public Map<String, Integer> peterPaulPartnership(Map<String, Integer> peterPaul) {
-		return null;
-//		if (peterPaul.get("Peter") > 5000 && peterPaul.get("Paul") > 10000)
-//		{
-//			double peterMoney = peterPaul.get("Peter");
-//			double paulMoney = peterPaul.get("Paul");
-//			peterPaul.put("PeterPaulPartnership", (peterMoney * .25) + (paulMoney * .25));
-//			peterPaul.put("Peter", peterMoney-(peterMoney*.25));
-//			peterPaul.put("Paul", paulMoney-(paulMoney*.25));
-//			return peterPaul;
-//		}else return peterPaul;
+
+		if (peterPaul.get("Peter") > 5000 && peterPaul.get("Paul") > 10000)
+		{
+			double peterMoney = peterPaul.get("Peter");
+			double paulMoney = peterPaul.get("Paul");
+			peterPaul.put("PeterPaulPartnership", ((peterMoney * .25) + (paulMoney * .25)));
+			peterPaul.put("Peter", peterMoney-(peterMoney*.25));
+			peterPaul.put("Paul", paulMoney-(paulMoney*.25));
+			return peterPaul;
+		}else return peterPaul;
 	}
 
 	/*
@@ -236,27 +235,30 @@ public class Exercises {
 	 */
 	public Map<String, Integer> consolidateInventory(Map<String, Integer> mainWarehouse,
 			Map<String, Integer> remoteWarehouse) {
+
 		Map<String, Integer> largerMap = new HashMap<>();
 		Map<String, Integer> smallerMap = new HashMap<>();
 
-		if (mainWarehouse.size() > remoteWarehouse.size())
-		{
-			largerMap = mainWarehouse;
-			smallerMap = remoteWarehouse;
-		} else {
-			largerMap = remoteWarehouse;
-			smallerMap = mainWarehouse;
-		}
+//		if (mainWarehouse.size() > remoteWarehouse.size())
+//		{
+//			largerMap = mainWarehouse;
+//			smallerMap = remoteWarehouse;
+//		} else {
+//			largerMap = remoteWarehouse;
+//			smallerMap = mainWarehouse;
+//		}
 
-
-		for (Map.Entry<String, Integer> sku : largerMap.keySet())
-		{
-			if (smallerMap.containsKey(sku))
+		if (mainWarehouse.size()> remoteWarehouse.size()){
+			for (Map.Entry<String, Integer> sku : mainWarehouse.keySet())
 			{
-				largerMap.put(sku, (smallerMap.get(sku)+largerMap.get(sku)));
-			}else largerMap.put(sku, smallerMap.get(sku));
+				if (remoteWarehouse.containsKey(sku))
+				{
+					mainWarehouse.put(sku, (remoteWarehouse.get(sku)+mainWarehouse.get(sku)));
+				}else mainWarehouse.put(sku, remoteWarehouse.get(sku));
+			}
 		}
-		return largerMap;
+
+		return mainWarehouse;
 	}
 
 	/*
@@ -275,7 +277,7 @@ public class Exercises {
 	 *
 	 */
 	public Map<String, Integer> last2Revisited(String[] words) {
-
+		return null;
 	}
 
 }
