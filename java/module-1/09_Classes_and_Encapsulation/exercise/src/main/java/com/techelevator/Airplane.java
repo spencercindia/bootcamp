@@ -21,7 +21,7 @@ public class Airplane {
             } else return false;
         } else if (!forFirstClass){
             if (totalCoachSeats-bookedCoachSeats >= totalNumberOfSeats){
-                bookedCoachSeats+=totalCoachSeats;
+                bookedCoachSeats+=totalNumberOfSeats;
                 return true;
             } else return false;
         } else return false;
