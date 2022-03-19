@@ -99,13 +99,12 @@ public class Exercises {
 	 */
 	public Map<String, Integer> robPeterToPayPaul(Map<String, Integer> peterPaul) {
 
-		Map<String, Integer> outputAfterRobbery = new HashMap<>();
 
 		if (peterPaul.get("Peter") > 0 && peterPaul.get("Paul") < 1000)
 		{
-			outputAfterRobbery.put("Paul", (peterPaul.get("Peter")/2)+peterPaul.get("Paul"));
-			outputAfterRobbery.put("Peter", peterPaul.get("Peter")/2);
-			return outputAfterRobbery;
+			peterPaul.put("Paul", (peterPaul.get("Peter")/2)+peterPaul.get("Paul"));
+			peterPaul.put("Peter", peterPaul.get("Peter")/2);
+			return peterPaul;
 		} else
 			return peterPaul;
 
@@ -121,15 +120,13 @@ public class Exercises {
 	 *
 	 */
 	public Map<String, Integer> peterPaulPartnership(Map<String, Integer> peterPaul) {
-
-		if (peterPaul.get("Peter") > 5000 && peterPaul.get("Paul") > 10000)
+		Map<String, Integer> peterPaulPartnership = new HashMap<>();
+		if (peterPaul.get("Peter") >= 5000 && peterPaul.get("Paul") >= 10000)
 		{
-			double peterMoney = peterPaul.get("Peter");
-			double paulMoney = peterPaul.get("Paul");
-			peterPaul.put("PeterPaulPartnership", ((peterMoney * .25) + (paulMoney * .25)));
-			peterPaul.put("Peter", peterMoney-(peterMoney*.25));
-			peterPaul.put("Paul", paulMoney-(paulMoney*.25));
-			return peterPaul;
+			peterPaulPartnership.put("PeterPaulPartnership", (peterPaul.get("Peter")/4)+(peterPaul.get("Paul")/4));
+			peterPaulPartnership.put("Peter", peterPaul.get("Peter")-(peterPaul.get("Peter")/4));
+			peterPaulPartnership.put("Paul", peterPaul.get("Paul")-(peterPaul.get("Paul")/4));
+			return peterPaulPartnership;
 		}else return peterPaul;
 	}
 
@@ -235,30 +232,7 @@ public class Exercises {
 	 */
 	public Map<String, Integer> consolidateInventory(Map<String, Integer> mainWarehouse,
 			Map<String, Integer> remoteWarehouse) {
-
-		Map<String, Integer> largerMap = new HashMap<>();
-		Map<String, Integer> smallerMap = new HashMap<>();
-
-//		if (mainWarehouse.size() > remoteWarehouse.size())
-//		{
-//			largerMap = mainWarehouse;
-//			smallerMap = remoteWarehouse;
-//		} else {
-//			largerMap = remoteWarehouse;
-//			smallerMap = mainWarehouse;
-//		}
-
-		if (mainWarehouse.size()> remoteWarehouse.size()){
-			for (Map.Entry<String, Integer> sku : mainWarehouse.keySet())
-			{
-				if (remoteWarehouse.containsKey(sku))
-				{
-					mainWarehouse.put(sku, (remoteWarehouse.get(sku)+mainWarehouse.get(sku)));
-				}else mainWarehouse.put(sku, remoteWarehouse.get(sku));
-			}
-		}
-
-		return mainWarehouse;
+		return null;
 	}
 
 	/*
