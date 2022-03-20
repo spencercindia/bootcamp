@@ -44,7 +44,6 @@ public class Exercises {
             return "unknown";
         }
         return mapOfAnimalNames.getOrDefault(animalName.toLowerCase(), "unknown");
-
     }
 
     /*
