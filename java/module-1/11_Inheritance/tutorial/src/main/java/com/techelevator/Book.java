@@ -3,7 +3,7 @@ package com.techelevator;
 /**
  * Book
  */
-public class Book {
+public class Book extends MediaItem {
 
     private String title;
     private String author;
