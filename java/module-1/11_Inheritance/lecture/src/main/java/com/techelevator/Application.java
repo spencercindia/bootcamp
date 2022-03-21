@@ -16,6 +16,14 @@ public class Application {
         //....
         //....
         // This might go on until the auction runs out of time or hits a max # of bids
+        System.out.println("Starting a general auction");
+        System.out.println("-----------------");
+        BuyoutAuction buyoutAuction = new BuyoutAuction("Tech Elevator T Shirt", 30);
+        buyoutAuction.placeBid(new Bid("Chrales", 20));
+        buyoutAuction.placeBid(new Bid("Buddy", 10));
+        buyoutAuction.placeBid(new Bid("Scott", 30));
+
+        System.out.println(buyoutAuction.getHighBid().toString());
 
     }
 }
