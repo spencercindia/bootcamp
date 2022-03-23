@@ -26,7 +26,7 @@ public class BankCustomer {
         return isVip;
     }
 
-    public void addAccount(Accountable newAccount){
+    public void addAccount(Accountable newAccount) {
         accounts.add(newAccount);
     }
 
@@ -57,7 +57,4 @@ public class BankCustomer {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
-
-
-
 }

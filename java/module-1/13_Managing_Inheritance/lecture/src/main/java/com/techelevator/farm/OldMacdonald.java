@@ -1,10 +1,16 @@
 package com.techelevator.farm;
 
+import java.util.Collections;
+
 public class OldMacdonald {
 	public static void main(String[] args) {
+		Cow cow = new Cow();
+		cow.sleep(true);
+		Cat cat = new Cat("Chester", "whatever");
+		cat.sleep(true);
 
 		Singable[] singables =
-				new Singable[] {new Cow(), new Chicken(), new Pig(), new Tractor()};
+				new Singable[] {new Cow(), new Chicken(), new Pig(), new Tractor(), cat, cow};
 
 		for (Singable singable : singables) {
 			String name = singable.getName();
