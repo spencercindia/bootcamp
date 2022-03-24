@@ -13,7 +13,6 @@ class PaintCalculator {
     public static void main(String[] args) {
 
         // Step One:
-        1
         List<Wall> walls = new ArrayList<Wall>();
 
         while (true) {
