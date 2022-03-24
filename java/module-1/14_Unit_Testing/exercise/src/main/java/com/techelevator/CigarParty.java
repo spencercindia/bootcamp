@@ -1,6 +1,6 @@
 package com.techelevator;
 
-public class CigarParty {
+public class  CigarParty {
 
     /*
      When squirrels get together for a party, they like to have cigars. A squirrel party is successful
