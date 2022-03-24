@@ -12,7 +12,8 @@ class PaintCalculator {
 
     public static void main(String[] args) {
 
-        //Step One:
+        // Step One:
+        1
         List<Wall> walls = new ArrayList<Wall>();
 
         while (true) {
@@ -25,7 +26,7 @@ class PaintCalculator {
 
             if (userChoice.equals("1")) {
                 // Step One:
-                Wall newWall = null;
+                 Wall newWall = null;
 
                 System.out.println("What's the name of the new wall?");
                 String name = userInput.nextLine();
@@ -60,7 +61,7 @@ class PaintCalculator {
                     int base = Integer.parseInt(userInput.nextLine());
 
                     // Step Four:
-                    //newWall = new TriangleWall(name, color, height, base);
+                    newWall = new TriangleWall(name, color, height, base);
                 }
 
                 // Step Two:
@@ -73,6 +74,16 @@ class PaintCalculator {
 
                 int totalArea = 0;
                 // Step One:
+                for (int i = 0; i < walls.size(); i++) {
+                    System.out.println(
+                            String.format("Wall %d: %s - %d square ft", i + 1,
+                                    walls.get(i), walls.get(i).getArea()));
+                    totalArea = totalArea + walls.get(i).getArea();
+                    colorChoiceAreas.put(walls.get(i).getColor(),
+                            colorChoiceAreas
+                                    .getOrDefault(walls.get(i).getColor(), 0)
+                                    + walls.get(i).getArea());
+                }
 
                 System.out.println("===============================");
                 System.out.println("Total Area: " + totalArea + " square feet");

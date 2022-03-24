@@ -7,6 +7,6 @@ public class SquareWall extends RectangleWall {
         this.sideLength = sideLength;
     }
     public String toString(){
-        return getName() + " (" + sideLength + "*" + sideLength + ") " + "square";
+        return getName() + " (" + sideLength + "x" + sideLength + ") " + "square";
     }
 }

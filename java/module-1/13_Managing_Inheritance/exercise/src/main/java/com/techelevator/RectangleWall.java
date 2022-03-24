@@ -10,7 +10,7 @@ public class RectangleWall extends Wall{
         this.height = height;
     }
     public String toString(){
-        return getName() + " (" + length + "*" + height + ") " + "rectangle";
+        return getName() + " (" + Integer.toString(length) + "x" + Integer.toString(height) + ") " + "rectangle";
     }
 
     @Override
