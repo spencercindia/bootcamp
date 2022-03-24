@@ -27,11 +27,12 @@ public class Coffee implements Purchasable {
         this.blend = blend;
     }
 
-
+    @Override
     public double getPrice() {
         return price;
     }
 
+    @Override
     public boolean isTaxable() {
         return false;
     }
