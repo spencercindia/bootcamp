@@ -11,6 +11,7 @@ public class StringBitsTest {
     StringBits mysteryString = new StringBits();
     @Before
     public void setUp() throws Exception {
+
     }
 
     @After
