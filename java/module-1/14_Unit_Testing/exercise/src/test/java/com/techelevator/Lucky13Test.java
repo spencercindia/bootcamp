@@ -53,6 +53,16 @@ public class Lucky13Test {
         Assert.assertFalse(actual);
 
     }
+    @Test
+    public void should_return_false_if_7_1_5(){
+        inputArray = new int[]{7, 1, 5};
+        boolean expected = false;
+
+        boolean actual = my1And3Checker.getLucky(inputArray);
+
+        Assert.assertFalse(actual);
+
+    }
 
 
 }

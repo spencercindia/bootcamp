@@ -87,4 +87,13 @@ public class Less20Test {
 
         Assert.assertFalse(actual);
     }
+    @Test
+    public void should_return_false_if_21(){
+        int myinput = 21;
+        boolean expected = false;
+
+        boolean actual = doMaths.isLessThanMultipleOf20(myinput);
+
+        Assert.assertFalse(actual);
+    }
 }
