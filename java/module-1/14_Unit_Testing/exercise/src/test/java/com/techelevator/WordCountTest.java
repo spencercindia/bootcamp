@@ -53,5 +53,11 @@ public class WordCountTest {
         getValues = getCount.getCount(new String[] {"bob", "Bob"});
         Assert.assertNotEquals(getValues.get("bob").intValue(), 2);
     }
+    @Test
+    public void should_return_null_if_empty(){
+        Map<String, Integer> wordCountPairs = new HashMap<>();
+        getValues = getCount.getCount(new String[] {});
+        Assert.assertNotEquals(getValues.size(), null);
+    }
 
 }
