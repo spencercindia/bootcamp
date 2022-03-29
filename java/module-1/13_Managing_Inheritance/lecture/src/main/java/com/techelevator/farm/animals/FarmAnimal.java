@@ -1,4 +1,6 @@
-package com.techelevator.farm;
+package com.techelevator.farm.animals;
+
+import com.techelevator.farm.interfaces.Singable;
 
 public abstract class FarmAnimal implements Singable {
 	private String name;

@@ -1,4 +1,4 @@
-package com.techelevator.farm;
+package com.techelevator.farm.animals;
 
 public class Cat extends FarmAnimal {
     public Cat(String name, String sound){

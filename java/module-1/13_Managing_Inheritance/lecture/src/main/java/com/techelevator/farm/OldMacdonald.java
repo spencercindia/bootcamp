@@ -1,6 +1,12 @@
 package com.techelevator.farm;
 
-import java.util.Collections;
+import com.techelevator.farm.animals.Cat;
+import com.techelevator.farm.animals.Chicken;
+import com.techelevator.farm.animals.Cow;
+import com.techelevator.farm.animals.Pig;
+import com.techelevator.farm.food.Egg;
+import com.techelevator.farm.interfaces.Sellable;
+import com.techelevator.farm.interfaces.Singable;
 
 public class OldMacdonald {
 	public static void main(String[] args) {
