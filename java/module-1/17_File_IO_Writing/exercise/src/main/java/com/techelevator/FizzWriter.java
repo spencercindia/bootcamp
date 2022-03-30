@@ -1,6 +1,7 @@
 package com.techelevator;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.util.Scanner;
 
 public class FizzWriter {
