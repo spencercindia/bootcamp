@@ -33,6 +33,9 @@ public class QuizMaker {
 					if (Integer.parseInt(userAnswer) == correctAnswerNumber) {
 						System.out.println("Your answer: " + userAnswer);
 						System.out.println("Correct!");
+					} else {
+						System.out.println("Your answer: " + userAnswer);
+						System.out.println("Incorrect :/");
 					}
 				} catch (Exception e) {
 					System.out.println("Sorry, try answering just the answer number...");
