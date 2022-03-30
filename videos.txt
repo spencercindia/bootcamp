@@ -67,3 +67,9 @@ Passcode: %f4=vVxh
 1-15/1-16a Exception handling and File Reading
 https://techelevator.zoom.us/rec/share/hxtLKbeLhF6e2XIoQkc3YgsgX8LOWfqWMp64pODF9tQtvDVVkePNXmlvg2odBrMo.RZSJnCr5VA-IQ_ZP
 Passcode: ^1gb097+
+
+1-16b File Writing
+https://techelevator.zoom.us/rec/share/83_MSjdBAC9SxjjxJH-734wCCNMJUxVeBYu4ooEq0dtToPaxCExh8Gl6wMMAOBje.Ja4cIq1Q5cFhbrEx
+Passcode: q#t#Uq^6
+
+
