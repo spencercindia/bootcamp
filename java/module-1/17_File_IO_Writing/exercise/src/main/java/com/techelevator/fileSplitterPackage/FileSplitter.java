@@ -1,4 +1,4 @@
-package com.techelevator;
+package com.techelevator.fileSplitterPackage;
 
 import java.io.File;
 import java.io.IOException;
