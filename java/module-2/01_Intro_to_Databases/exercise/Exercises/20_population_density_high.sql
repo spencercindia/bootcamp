@@ -5,4 +5,4 @@ SELECT state_name
 , area
 , population/area AS population_density
 FROM state
-WHERE population_density > 100;
+WHERE population/area > 100;
