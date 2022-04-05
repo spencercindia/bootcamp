@@ -38,7 +38,7 @@ public class ExercisesTest {
 	/* Before any tests are run, this method initializes the datasource for testing. */
 	@BeforeClass
 	public static void setupDataSource() throws SQLException, IOException, FileNotFoundException, ClassNotFoundException {
-		dataSource = createDatasource("UnitedStates");
+		dataSource = createDatasource("united_states");
 		/* The following line disables autocommit for connections
 		 * returned by this DataSource. This allows us to rollback
 		 * any changes after each test */
