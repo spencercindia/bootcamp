@@ -1,18 +1,26 @@
 -- INNER JOIN
 
 -- Write a query to retrieve the name and state abbreviation for the 2 cities named "Columbus" in the database
-
+SELECT city_name, city.state_abbreviation, state_name
+FROM city
+JOIN state ON city.state_abbreviation = state.state_abbreviation
+WHERE city_name = 'Columbus';
 
 -- Modify the previous query to retrieve the names of the states (rather than their abbreviations).
 
 
 -- Write a query to retrieve the names of all the national parks with their state abbreviations.
 -- (Some parks will appear more than once in the results, because they cross state boundaries.)
-
+SELECT park_name, park_state.state_abbreviation
+FROM park
+JOIN park_state ON park.park_id = park_state.park_id;
 
 -- The park_state table is an associative table that can be used to connect the park and state tables.
 -- Modify the previous query to retrieve the names of the states rather than their abbreviations.
-
+SELECT state_name, park_name
+FROM park
+JOIN park_state ON park.park_id = park_state.park_id
+JOIN state ON park_state.state_abbreviation = state.state_abbreviation;
 
 -- Modify the previous query to include the name of the state's capital city.
 
