@@ -79,3 +79,11 @@ Passcode: HHUg3.NJ
 2-1 Intro to Databases
 https://techelevator.zoom.us/rec/share/Rq6R5D3hSWDIv-jhLrtWG-qeItQ_oiBL0DVqTWWlHJ-p2bn7WK5Xdwp-YNm7S0CR.Cz3u2zvk4NBZbto6
 Passcode: ^N$r4i&U
+
+2-2 Ordering, Limiting, and Grouping
+https://techelevator.zoom.us/rec/share/zMj0GbxGbPj-I0u0M5h_k74LBMcVaWW45AiewdoiV5vZ_dKGxKrUweVTHlYdlWjl.8mhR3T4D5ep1tlUX
+Passcode: igneX9+W
+
+2-3 Joins
+https://techelevator.zoom.us/rec/share/IZzhjXzmKWlRh0qnO1xNFeuexE5SVUvJSDpYwsk1L-jTON1NCn3QXqIW1E1PqnJv.DgmULRjSZPUTT9-p
+Passcode: CPHx4@Li
