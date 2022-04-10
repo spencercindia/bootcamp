@@ -3,6 +3,6 @@
 select person_name, count(movie_actor.movie_id) as num_of_movies
 from person
 left join movie_actor on person.person_id = movie_actor.actor_id
-where person_name ILIKE 'George %'
+where person_name LIKE 'George %'
 group by person_name, person_id
 order by person_name;
