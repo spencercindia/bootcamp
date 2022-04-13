@@ -20,7 +20,18 @@ public class JdbcDepartmentDao implements DepartmentDao {
 
 	@Override
 	public Department getDepartment(Long id) {
-		return new Department(0L, "Not Implemented Yet");
+
+		String sql = "select * from department where department_id = ?;";
+		SqlRowSet result = jdbcTemplate.queryForRowSet(sql, id);
+		Department department;
+
+		if (result.next()){
+			department = mapRowToDepartment(result);
+		}
+		else
+			department = null;
+
+		return department;
 	}
 
 
