@@ -95,3 +95,11 @@ Passcode: DqC7*sTm
 2-5 Review
 https://techelevator.zoom.us/rec/share/ueTlt7tr8GMpV8p3wkrALyHlrZdkh2Dpc7K889nz5S32ZiNjUTd-f8VHZyxy0M0.PpXR4s4xh_ijZTQy
 Passcode: +neg61.t
+
+2-6 Database Design
+https://techelevator.zoom.us/rec/share/joYjlPj-pmMU7P6AIG9Qs9ikwVk4viYxGdAUN8DbsP92y09agFm0R4QaoTYecm7M.e3p-asJCAckdWQ10
+Passcode: *=hYA0+6
+
+2-7 Data access and DAO
+https://techelevator.zoom.us/rec/share/joYjlPj-pmMU7P6AIG9Qs9ikwVk4viYxGdAUN8DbsP92y09agFm0R4QaoTYecm7M.e3p-asJCAckdWQ10
+Passcode: *=hYA0+6
