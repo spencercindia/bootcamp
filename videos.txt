@@ -103,3 +103,8 @@ Passcode: *=hYA0+6
 2-7 Data access and DAO
 https://techelevator.zoom.us/rec/share/joYjlPj-pmMU7P6AIG9Qs9ikwVk4viYxGdAUN8DbsP92y09agFm0R4QaoTYecm7M.e3p-asJCAckdWQ10
 Passcode: *=hYA0+6
+
+2-8 Data Security
+https://techelevator.zoom.us/rec/share/n-y2p6qWdvdHx3pdNbmUh3gFHzaArIvEI4e6y84l_scxsuAgYt7sh2fXWkoHzBmV.wPWsK10NOoyAVNam
+Passcode: J!dW@Q7.
+
