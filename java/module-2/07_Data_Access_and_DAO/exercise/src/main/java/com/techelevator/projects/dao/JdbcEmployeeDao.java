@@ -6,6 +6,7 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import com.techelevator.projects.model.Department;
+import com.techelevator.projects.model.Project;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.techelevator.projects.model.Employee;
@@ -22,7 +23,13 @@ public class JdbcEmployeeDao implements EmployeeDao {
 	
 	@Override
 	public List<Employee> getAllEmployees() {
-		return null;
+		List<Employee> employees = new ArrayList<>();
+		String sql = "select * from employee;";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
+		while (results.next()) {
+			employees.add(mapRowToProject(results));
+		}
+		return employees;
 	}
 
 	@Override
@@ -48,5 +55,14 @@ public class JdbcEmployeeDao implements EmployeeDao {
 		return new ArrayList<>();
 	}
 
-
+	private Employee mapRowToProject(SqlRowSet results) {
+		Employee employee = new Employee();
+		employee.setId(results.getLong("employee_id"));
+		employee.setDepartmentId(results.getLong("department_id"));
+		employee.setFirstName(results.getString("first_name"));
+		employee.setLastName(results.getString("last_name"));
+		employee.setBirthDate(results.getDate("birth_date").toLocalDate());
+		employee.setHireDate(results.getDate("hire_date").toLocalDate());
+		return employee;
+	}
 }

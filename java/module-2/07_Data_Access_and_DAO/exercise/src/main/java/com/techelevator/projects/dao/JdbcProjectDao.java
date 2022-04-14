@@ -35,33 +35,35 @@ public class JdbcProjectDao implements ProjectDao {
 
 	@Override
 	public List<Project> getAllProjects() {
-		return new ArrayList<>();
+		List<Project> projects = new ArrayList<>();
+		String sql = "select * from project;";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
+		while (results.next()) {
+			projects.add(mapRowToProject(results));
+		}
+		return projects;
 	}
 
 	@Override
 	public Project createProject(Project newProject) {
 		Project project = new Project();
 		String sql = "insert into project (name, from_date, to_date) values (?, ?, ?) returning project_id;";
-
-		if (newProject.getFromDate() == null) {
-			if (newProject.getToDate() == null) {
-				Long newProjectId = jdbcTemplate.queryForObject(sql, Long.class, newProject.getName(), null, null);
-				project.setId(newProjectId);
-			} else {
-				Long newProjectId = jdbcTemplate.queryForObject(sql, Long.class, newProject.getName(), null, newProject.getToDate());
-				project.setId(newProjectId);
-			}
-		} else {
-			Long newProjectId = jdbcTemplate.queryForObject(sql, Long.class, newProject.getName(), newProject.getFromDate(), newProject.getToDate());
-			project.setId(newProjectId);
-		}
-		return project;
+		Long newProjectId = jdbcTemplate.queryForObject(sql, Long.class, newProject.getName(),
+				newProject.getFromDate(), newProject.getToDate());
+		newProject.setId(newProjectId);
+		return newProject;
 	}
 
 	@Override
 	public void deleteProject(Long projectId) {
-
+		String sql = "delete from project_employee where project_id = ?;";
+		jdbcTemplate.update(sql, projectId);
+		sql = "delete from timesheet where project_id = ?;";
+		jdbcTemplate.update(sql, projectId);
+		sql = "delete from project where project_id = ?;";
+		jdbcTemplate.update(sql, projectId);
 	}
+
 	private Project mapRowToProject(SqlRowSet results) {
 		Project project = new Project();
 		project.setId(results.getLong("project_id"));
