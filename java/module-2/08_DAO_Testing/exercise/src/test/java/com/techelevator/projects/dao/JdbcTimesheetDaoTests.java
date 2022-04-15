@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.time.LocalDate;
+import java.util.EmptyStackException;
 import java.util.List;
 
 public class JdbcTimesheetDaoTests extends BaseDaoTests {
@@ -29,17 +30,28 @@ public class JdbcTimesheetDaoTests extends BaseDaoTests {
 
     @Test
     public void getTimesheet_returns_correct_timesheet_for_id() {
-        Assert.fail();
+        Timesheet timesheet = sut.getTimesheet(1L);
+        assertTimesheetsMatch(TIMESHEET_1, timesheet);
+
+        timesheet = sut.getTimesheet(4L);
+        assertTimesheetsMatch(TIMESHEET_4, timesheet);
     }
 
     @Test
     public void getTimesheet_returns_null_when_id_not_found() {
-        Assert.fail();
+        Assert.assertNull(sut.getTimesheet(5L));
+        Assert.assertNull(sut.getTimesheet(8L));
     }
 
     @Test
     public void getTimesheetsByEmployeeId_returns_list_of_all_timesheets_for_employee() {
-        Assert.fail();
+        List<Timesheet> timesheets = sut.getTimesheetsByEmployeeId(2L);
+        Assert.assertEquals(2, timesheets.size());
+
+        timesheets = sut.getTimesheetsByEmployeeId(1L);
+        Assert.assertEquals(2, timesheets.size());
+
+        assertTimesheetsMatch(timesheets.get(0), TIMESHEET_1); // should work based on line 38 in timesheetDAO order by timesheet
     }
 
     @Test
@@ -69,7 +81,11 @@ public class JdbcTimesheetDaoTests extends BaseDaoTests {
 
     @Test
     public void getBillableHours_returns_correct_total() {
-        Assert.fail();
+        double actualHours = sut.getBillableHours(1L, 1L);
+        Assert.assertEquals(2.5, actualHours, 0);
+
+        actualHours = sut.getBillableHours(2L, 2L);
+        Assert.assertEquals(0, actualHours, 0);
     }
 
     private void assertTimesheetsMatch(Timesheet expected, Timesheet actual) {
