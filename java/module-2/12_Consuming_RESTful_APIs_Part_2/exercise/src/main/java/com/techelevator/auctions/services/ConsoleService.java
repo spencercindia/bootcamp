@@ -115,20 +115,7 @@ public class ConsoleService {
     }
 
     private Auction makeAuction(String csv) {
-        Auction auction = null;
-        String[] parsed = csv.split(",");
-        if (parsed.length == 4) {
-            try {
-                auction = new Auction();
-                auction.setTitle(parsed[0].trim());
-                auction.setDescription(parsed[1].trim());
-                auction.setUser(parsed[2].trim());
-                auction.setCurrentBid(Double.parseDouble(parsed[3].trim()));
-            } catch (NumberFormatException e) {
-                auction = null;
-            }
-        }
-        return auction;
+        return null;
     }
 
     public void pause() {
