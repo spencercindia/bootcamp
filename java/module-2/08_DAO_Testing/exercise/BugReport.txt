@@ -13,24 +13,26 @@ if statement should have been a while
 Bug 2
 -----
 Test that demonstrates problem:
-
+getTimesheetsByProjectId_returns_list_of_all_timesheets_for_project
 Expected output:
-
+a list of size 3 based on the test db
 Actual output:
-
+list size 2
 How did you fix this bug?
-
+sql query said "where employee_id" instead of "where project_id"
 
 Bug 3
 -----
 Test that demonstrates problem:
-
+updated_timesheet_has_expected_values_when_retrieved
 Expected output:
-
+unique description matches up when updated
 Actual output:
-
+error with sql query and placeholders
 How did you fix this bug?
+billable parameter was missing in update method?
 
+I'm not entirely sure about this one ^
 
 Bug 4
 -----

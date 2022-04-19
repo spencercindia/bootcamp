@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.EmptyStackException;
 import java.util.List;
 
@@ -56,27 +57,41 @@ public class JdbcTimesheetDaoTests extends BaseDaoTests {
 
     @Test
     public void getTimesheetsByProjectId_returns_list_of_all_timesheets_for_project() {
-        Assert.fail();
+        List<Timesheet> timesheets = sut.getTimesheetsByProjectId(1L);
+        // should return size 3 list for 1L
+        Assert.assertEquals(3, timesheets.size());
+
     }
 
     @Test
     public void createTimesheet_returns_timesheet_with_id_and_expected_values() {
-        Assert.fail();
+        Timesheet newTimesheet = new Timesheet(5L, 1L, 1L,
+                LocalDate.parse("2021-02-02"), 1.0, true, "Timesheet 5");
+        Timesheet timesheet = sut.createTimesheet(newTimesheet);
+        Assert.assertEquals(4, sut.getTimesheetsByProjectId(1L).size());
     }
 
     @Test
     public void created_timesheet_has_expected_values_when_retrieved() {
-        Assert.fail();
+        Timesheet newTimesheet = new Timesheet(5L, 1L, 1L,
+                LocalDate.parse("2021-02-02"), 1.0, true, "Timesheet 5");
+        sut.createTimesheet(newTimesheet);
+        Assert.assertEquals("Timesheet 5", sut.getTimesheet(5L).getDescription());
+        //having trouble doing Assert.assertEquals(5L, timesheet.getTimesheetID()); says it's ambiguous...
     }
 
     @Test
     public void updated_timesheet_has_expected_values_when_retrieved() {
-        Assert.fail();
+        Timesheet newTimesheet = new Timesheet(1L, 1L, 1L,
+                LocalDate.parse("2021-02-02"), 1.0, true, "Timesheet 1, but different");
+        sut.updateTimesheet(newTimesheet);
+        Assert.assertEquals("Timesheet 1, but different", sut.getTimesheet(1L).getDescription());
     }
 
     @Test
     public void deleted_timesheet_cant_be_retrieved() {
-        Assert.fail();
+        sut.deleteTimesheet(1L);
+        Assert.assertNull(sut.getTimesheet(1L));
     }
 
     @Test
