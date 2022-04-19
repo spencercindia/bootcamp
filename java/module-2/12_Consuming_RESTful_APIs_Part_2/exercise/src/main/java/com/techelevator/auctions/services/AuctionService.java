@@ -80,9 +80,7 @@ public class AuctionService {
     }
 
     private HttpEntity<Auction> makeEntity(Auction auction) {
-        HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.APPLICATION_JSON);
-        return new HttpEntity<>(auction, headers);
+        return null;
     }
 
 }
