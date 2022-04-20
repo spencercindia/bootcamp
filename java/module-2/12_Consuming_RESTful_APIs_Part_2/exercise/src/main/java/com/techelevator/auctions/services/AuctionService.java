@@ -15,20 +15,52 @@ public class AuctionService {
     public static final String API_BASE_URL = "http://localhost:3000/auctions/";
     private RestTemplate restTemplate = new RestTemplate();
 
+    private HttpEntity<Auction> makeEntity(Auction auction) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        return new HttpEntity<>(auction, headers);
+    }
 
     public Auction add(Auction newAuction) {
-        // place code here
-        return null;
+        HttpEntity<Auction> entity = makeEntity(newAuction);
+
+        Auction returnedAuction = null;
+        try {
+            returnedAuction = restTemplate.postForObject(API_BASE_URL, entity, Auction.class);
+        } catch (RestClientResponseException e) {
+            BasicLogger.log(e.getRawStatusCode() + " : " + e.getMessage());
+        } catch (ResourceAccessException e) {
+            BasicLogger.log(e.getMessage());
+        }
+        return returnedAuction;
     }
 
     public boolean update(Auction updatedAuction) {
-        // place code here
-        return false;
+        HttpEntity<Auction> entity = makeEntity(updatedAuction);
+
+        boolean success = false;
+        try {
+            restTemplate.put(API_BASE_URL + updatedAuction.getId(), entity);
+            success = true;
+        } catch (RestClientResponseException e) {
+            BasicLogger.log(e.getRawStatusCode() + " : " + e.getMessage());
+        } catch (ResourceAccessException e) {
+            BasicLogger.log(e.getMessage());
+        }
+        return success;
     }
 
     public boolean delete(int auctionId) {
-        // place code here
-        return false;
+        boolean success = false;
+        try {
+            restTemplate.delete(API_BASE_URL + auctionId);
+            success = true;
+        } catch (RestClientResponseException e) {
+            BasicLogger.log(e.getRawStatusCode() + " : " + e.getMessage());
+        } catch (ResourceAccessException e) {
+            BasicLogger.log(e.getMessage());
+        }
+        return success;
     }
 
     public Auction[] getAllAuctions() {
@@ -77,10 +109,6 @@ public class AuctionService {
             BasicLogger.log(e.getMessage());
         }
         return auctions;
-    }
-
-    private HttpEntity<Auction> makeEntity(Auction auction) {
-        return null;
     }
 
 }

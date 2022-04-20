@@ -1,5 +1,9 @@
 package com.techelevator.auctions.model;
 
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+
 public class Auction {
 
     private int id;
@@ -10,6 +14,8 @@ public class Auction {
 
     public Auction() {
     }
+
+
 
     public Auction(int id, String title, String description, String user, double currentBid) {
         this.id = id;

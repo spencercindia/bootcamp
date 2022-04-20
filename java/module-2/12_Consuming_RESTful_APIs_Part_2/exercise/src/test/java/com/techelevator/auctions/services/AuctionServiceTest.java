@@ -50,8 +50,7 @@ public class AuctionServiceTest {
         when(mockRestTemplate.postForObject(
                 Mockito.eq(EXPECTED_API_URL),
                 Mockito.eq(makeEntityHelper(newAuction)),
-                Mockito.eq(Auction.class)))
-                .thenReturn(expectedAuction);
+                Mockito.eq(Auction.class))).thenReturn(expectedAuction);
 
         // Act
         Auction actualAuction = sut.add(newAuction);

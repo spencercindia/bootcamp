@@ -1,12 +1,28 @@
 package com.techelevator.auctions.services;
 
 import com.techelevator.auctions.model.Auction;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 
 import java.util.Scanner;
 
 public class ConsoleService {
 
     private final Scanner scanner = new Scanner(System.in);
+
+    public Auction makeAuction(String csv) {
+        Auction auction = new Auction();
+        String[] csvArray = csv.split(",");
+
+        auction.setTitle(csvArray[0]);
+        auction.setDescription(csvArray[1]);
+        auction.setUser(csvArray[2]);
+        auction.setCurrentBid(Double.parseDouble(csvArray[3]));
+        return auction;
+    }
+
+
 
     public int promptForMenuSelection() {
         int menuSelection;
@@ -114,9 +130,6 @@ public class ConsoleService {
         return newAuction;
     }
 
-    private Auction makeAuction(String csv) {
-        return null;
-    }
 
     public void pause() {
         System.out.println("\nPress Enter to continue...");
