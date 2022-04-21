@@ -3,16 +3,14 @@ package com.techelevator.auctions.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import com.techelevator.auctions.dao.AuctionDao;
 import com.techelevator.auctions.exception.AuctionNotFoundException;
 import com.techelevator.auctions.model.Auction;
+
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/auctions")
@@ -25,6 +23,12 @@ public class AuctionController {
         this.dao = dao;
     }
 
+    /**
+     *
+     * @param title_like
+     * @param currentBid_lte
+     * @return
+     */
     @RequestMapping( path = "", method = RequestMethod.GET)
     public List<Auction> list(@RequestParam(defaultValue = "") String title_like, @RequestParam(defaultValue = "0") double currentBid_lte) {
 
@@ -38,15 +42,49 @@ public class AuctionController {
         return dao.list();
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     * @throws AuctionNotFoundException
+     */
     @RequestMapping(path = "/{id}", method = RequestMethod.GET)
     public Auction get(@PathVariable int id) throws AuctionNotFoundException {
         return dao.get(id);
     }
 
+    /**
+     *
+     * @param auction
+     * @return
+     */
+    @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping( path = "", method = RequestMethod.POST)
-    public Auction create(@RequestBody Auction auction) {
+    public Auction create(@Valid @RequestBody Auction auction) {
         return dao.create(auction);
     }
 
+    /**
+     *
+     * @param auction
+     * @param id
+     * @return
+     * @throws AuctionNotFoundException
+     */
+    @RequestMapping(path = "/{id}", method = RequestMethod.PUT)
+    public Auction update(@Valid @RequestBody Auction auction,
+                          @PathVariable int id) throws AuctionNotFoundException {
+        return dao.update(auction, id);
+    }
 
+    /**
+     * 
+     * @param id
+     * @throws AuctionNotFoundException
+     */
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @RequestMapping( path = "/{id}", method = RequestMethod.DELETE)
+    public void delete(@Valid @PathVariable int id) throws AuctionNotFoundException {
+        dao.delete(id);
+    }
 }

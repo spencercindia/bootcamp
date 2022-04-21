@@ -16,11 +16,9 @@ import java.util.List;
 public class HotelController {
 
     private HotelDao hotelDao;
-    private ReservationDao reservationDao;
 
-    public HotelController(HotelDao hotelDao, ReservationDao reservationDao) {
+    public HotelController(HotelDao hotelDao) {
         this.hotelDao = hotelDao;
-        this.reservationDao = reservationDao;
     }
 
     /**
@@ -44,50 +42,6 @@ public class HotelController {
         return hotelDao.get(id);
     }
 
-    /**
-     * Returns all reservations in the system
-     *
-     * @return all reservations
-     */
-    @RequestMapping(path = "/reservations", method = RequestMethod.GET)
-    public List<Reservation> listReservations() {
-        return reservationDao.findAll();
-    }
-
-    /**
-     * Get a reservation by its id
-     *
-     * @param id
-     * @return a single reservation
-     */
-    @RequestMapping(path = "reservations/{id}", method = RequestMethod.GET)
-    public Reservation getReservation(@PathVariable int id) throws ReservationNotFoundException {
-        return reservationDao.get(id);
-    }
-
-    /**
-     * List of reservations by hotel
-     *
-     * @param hotelID
-     * @return all reservations for a given hotel
-     */
-    @RequestMapping(path = "/hotels/{id}/reservations", method = RequestMethod.GET)
-    public List<Reservation> listReservationsByHotel(@PathVariable("id") int hotelID) throws HotelNotFoundException {
-        return reservationDao.findByHotel(hotelID);
-    }
-
-    /**
-     * Create a new reservation for a given hotel
-     *
-     * @param reservation
-     * @param hotelID
-     */
-    @ResponseStatus(HttpStatus.CREATED)
-    @RequestMapping(path = "/hotels/{id}/reservations", method = RequestMethod.POST)
-    public Reservation addReservation(@RequestBody Reservation reservation, @PathVariable("id") int hotelID)
-            throws HotelNotFoundException {
-        return reservationDao.create(reservation, hotelID);
-    }
 
     /**
      * /hotels/filter?state=oh&city=cleveland
