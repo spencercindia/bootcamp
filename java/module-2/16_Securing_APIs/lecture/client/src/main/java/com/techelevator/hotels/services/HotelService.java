@@ -24,10 +24,13 @@ public class HotelService {
      */
     public Reservation addReservation(Reservation newReservation) {
         Reservation returnedReservation = null;
+        try {
+            returnedReservation = restTemplate.exchange(API_BASE_URL + "reservations", HttpMethod.POST,
+                    makeReservationEntity(newReservation), Reservation.class).getBody();
 
-        //TODO: Add implementation
-        BasicLogger.log("HotelService.addReservation() has not been implemented");
-
+        } catch (RestClientResponseException e) {
+            BasicLogger.log("HotelService.addReservation() has not been implemented");
+        }
         return returnedReservation;
     }
 

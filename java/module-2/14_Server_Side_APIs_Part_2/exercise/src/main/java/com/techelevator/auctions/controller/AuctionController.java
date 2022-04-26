@@ -78,7 +78,7 @@ public class AuctionController {
     }
 
     /**
-     * 
+     *
      * @param id
      * @throws AuctionNotFoundException
      */
