@@ -147,3 +147,7 @@ Passcode: z6ogF+xu
 2-18 Capstone Kickoff
 https://techelevator.zoom.us/rec/share/XoVG9kFGLzRj_IJLbhmuKVeDQxVdNxTIGRzofDgFHa3swW9v3Aqy6R6_3VyFMpHR.SOAY0yUpTcteOaQM
 Passcode: ?Zj?GN1c
+
+3-1 HTML & CSS
+https://techelevator.zoom.us/rec/share/5Yp4mDZh86_EEA049gMlSRLf2tVirKo91Ca0IWEOeelLgRJXPURyRd4uNPReWKVL.mneezKOvvuny9NlC
+Passcode: ubv4QL+3
