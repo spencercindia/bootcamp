@@ -1,0 +1,24 @@
+h1 {
+    text-align: center;
+}
+h2{
+    text-decoration: underline;
+}
+article{
+    font-style: italic;
+}
+table, th, td, tr{
+    border: 1px solid black;
+}
+header{
+    text-align: center;
+}
+img{
+    max-width: 400px;
+}
+main{
+    text-align: center;
+}
+em{
+    font-style: courier, monospace;
+}
