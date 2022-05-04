@@ -1,0 +1,15 @@
+body main form{
+    border: 1px solid #bbb;
+    max-width: 30%;
+    height: auto;
+    padding: 30px;
+    background-color: rgb(106, 233, 255);
+}
+div{
+    margin: 10px;
+    border-bottom: 1px solid rgb(0, 70, 110);
+    max-width: 20%;
+    padding: 5px;
+    margin-left: center;
+    margin-right: center;
+}
