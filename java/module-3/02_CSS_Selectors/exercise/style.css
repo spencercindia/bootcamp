@@ -15,3 +15,75 @@ ul {
   margin: 0;
   padding: 0;
 }
+
+aside{
+  position: fixed;
+  border-right: 1px solid rgba(0, 173, 238, 0.4);
+  width: 200px;
+  height:100%;
+}
+
+body aside img{
+  width: 120px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+main {
+  margin-left: 200px;
+}
+
+body aside nav ul li{
+  text-align: center;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(0, 173, 238, 0.4);
+  padding-bottom: 20px;
+  margin: 25px;
+  list-style: none;
+}
+
+body aside nav ul li a{
+  font-weight: bold;
+  color: #00ADEE;
+  text-decoration: none;
+}
+body aside nav ul li:first-child{
+  text-decoration: underline;
+}
+body main header img {
+  height: 100px;
+  padding-bottom: 20px;
+}
+body main{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+body main img {
+  max-width: 100%;
+}
+body main section div{
+  width: 33%;
+  display: inline-block;
+}
+body main section h2{
+  color: #8CC36F;
+}
+i{
+  padding-right: 10px;
+}
+body main div {
+  max-width: 100%;
+  padding-left: 20px;
+}
+#what-we-do{
+  border-right: 1px solid rgba(170, 239, 135, 0.8);
+  margin-top: 30px;
+}
+#our-work{
+  border-right: 1px solid rgba(170, 239, 135, 0.8);
+  margin-top: 30px;
+}
+body main footer{
+}
