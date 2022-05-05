@@ -41,3 +41,12 @@ a:hover {
 .my-account img {
   width: 40px;
 }
+body header, nav ul {
+  display: flex;
+  flex-direction: row;
+}
+div.spacer{
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 1;
+}

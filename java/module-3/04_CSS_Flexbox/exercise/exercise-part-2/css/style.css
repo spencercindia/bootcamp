@@ -4,6 +4,7 @@ body {
   min-height: 100vh;
   /* Photo by Andre Furtado on Unsplash */
   background: url(../img/andre-furtado-JtV6zyOZSrA-unsplash.jpg) left / cover no-repeat;
+  display: flex;
 }
 
 #left-panel {
@@ -18,7 +19,13 @@ ul.social-icons {
 
 nav {}
 
-#right-panel {}
+#right-panel {
+}
+
+section#left-panel, section#right-panel {
+  display: flex;
+  flex-direction: column;
+}
 
 /* YOU WON'T NEED TO CHANGE ANY STYLES BELOW THIS LINE */
 
