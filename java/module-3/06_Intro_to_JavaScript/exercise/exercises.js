@@ -6,13 +6,15 @@
 		sumDouble(3, 2) → 5
 		sumDouble(2, 2) → 8
 
-		function sumDouble(x, y) {
-			// do logic here
-			// return result;
-			return x + y;
-        }
-*/
 
+*/
+function sumDouble(x, y) {
+	// do logic here
+	if (x == y) {
+		return (x*2) + (y*2);
+	} else
+	return x + y;
+}
 /*
 2. **hasTeen** We'll say that a number is "teen" if it is in the range 13..19 inclusive. 
     Given 3 int values, return true if 1 or more of them are teen.
@@ -21,6 +23,17 @@
 		hasTeen(20, 19, 10) → true
 		hasTeen(20, 10, 13) → true
 */
+function hasTeen(num1, num2, num3) {
+	if (num1 > 12 && num1 <= 19) {
+		return true;
+	} else if (num2 > 12 && num2 <= 19) {
+		return true;
+	} else if (num3 > 12 && num3 <= 19) {
+		return true;
+	} else {
+		return false;
+	}
+}
 
 /* 
 3. **lastDigit** Given two non-negative int values, return true if they have the same 
@@ -30,6 +43,15 @@
 		lastDigit(6, 17) → false
 		lastDigit(3, 113) → true
 */
+function lastDigit(num1, num2) {
+	let num1AsString = num1.toString;
+	let num2AsString = num2.toString;
+	if (num1AsString.substring(num1.length() - 1) == num2AsString.substring(num2.length() - 1)) {
+		return true;
+	} else {
+		return false;
+	}
+}
 
 /*
 4. **seeColor** Given a string, if the string begins with "red" or "blue" return that color 

@@ -16,6 +16,15 @@ nav ul li {
     text-align: center;
     line-height: 50px;
 }
+nav ul li:hover{
+    background-color: #feffff;
+}
+nav ul li a {
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    color:#000000;
+}
 
 header img {
     height: 100px;
@@ -54,4 +63,6 @@ main, section, footer {
     font-weight: bold;
     text-align: center;
     text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px 60px;
 }
