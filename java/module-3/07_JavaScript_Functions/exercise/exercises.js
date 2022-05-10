@@ -66,12 +66,28 @@ function makeNumber(string1, string2='') {
  * @param {...number} num a series of numbers to add together
  * @returns {number} the sum of all the parameters (or arguments)
  */
+function addAll() {
+    let result = 0;
+    for (var i = 0; i < arguments.length; i++) {
+        result += arguments[i];
+    }
+    return result;
+}
 
 /*
  * Write and document a function called makeHappy that takes
  * an array and prepends 'Happy ' to the beginning of all the
  * words and returns them as a new array. Use the `map` function.
  */
+/**
+ * 
+ * @param {array} array of things to make happy
+ * @returns newArray of concat strings
+ */
+function makeHappy(array) {
+    let newArray = array.map((str) => {return 'Happy ' + str})
+    return newArray;
+}
 
 /*
  * Write and document a function called getFullAddressesOfProperties
@@ -90,6 +106,16 @@ function makeNumber(string1, string2='') {
  *
  * Use `map` and an anonymous function.
  */
+/**
+ * 
+ * @param {array} objArray array of objects containing address properties
+ * @returns {array} addressArray
+ */
+function getFullAddressesOfProperties(objArray) {
+    let addressArray = objArray.map((obj) => {return obj.streetNumber + ' ' 
+    + obj.streetName + ' ' + obj.streetType + ' ' + obj.city + ' ' + obj.state + ' ' + obj.zip})
+    return addressArray;
+}
 
 /*
  * Write and document a function called findLargest.
@@ -97,6 +123,20 @@ function makeNumber(string1, string2='') {
  * Using `forEach`, find the largest element in an array.
  * It must work for strings and numbers.
  */
+/**
+ * 
+ * @param {array} array of strings or numbers
+ * @returns the largest element in the array
+ */
+function findLargest(array) {
+    let result = array[0];
+    array.forEach((element) => {
+        if (result < element) {
+            result = element;
+        }
+    });
+    return result;
+}
 
 /*
  * CHALLENGE
@@ -115,3 +155,11 @@ function makeNumber(string1, string2='') {
  *
  * Read the tests to verify you have the correct behavior.
  */
+function getSumOfSubArrayValues(array) {
+    let result = array.reduce((reducer, part, 0) => {
+        return reducer + part.reduce((reducer, part) => {
+            return reducer + part;
+        })
+    })
+    return result;
+}
