@@ -155,11 +155,11 @@ function findLargest(array) {
  *
  * Read the tests to verify you have the correct behavior.
  */
-function getSumOfSubArrayValues(array) {
-    let result = array.reduce((reducer, part, 0) => {
+function getSumOfSubArrayValues(array=[]) {
+    let result = array.reduce((reducer, part) => {
         return reducer + part.reduce((reducer, part) => {
             return reducer + part;
         })
-    })
+    }, 0)
     return result;
 }
