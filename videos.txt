@@ -164,3 +164,7 @@ https://techelevator.zoom.us/rec/share/buQzDLlJYtu_jJo4OuQ_iyOLOOBqSPwnnPSyglRgW
 3-6 Intro to Javascript
 https://techelevator.zoom.us/rec/share/UPWYzR-fX1ujgpdU_szm8AhiCQiqLiKugxErzEymDgbcxyI_BA-qv4gRQr-8ZVJ-.v8Hn-b914X4DszHI
 Passcode: mm0?e$4V
+
+3-7 Javascript Functions
+https://techelevator.zoom.us/rec/share/OoNlY2htvrOyJsGY17XeHFo0BxX-oYNh2IC9Z1qLULb61fij1VnpWObVKL1DgKGG.hpO5yb1QHYHgXkKd
+Passcode: =x$9tO?D
