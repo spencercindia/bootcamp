@@ -1,23 +1,43 @@
 // add pageTitle
+const pageTitle = 'My Shopping List';
 
 // add groceries
+let groceries = ['Tomatoes', 'Potatoes', 'Bananas', 'Waffles', 'Drink', 'Protein Bars', 'Apples', 'Chips', 'Nuts', 'Cheese']
 
 /**
  * This function will get a reference to the title and set its text to the value
  * of the pageTitle variable that was set above.
  */
-function setPageTitle() {}
+function setPageTitle() {
+  const titleElement = document.getElementById('title')
+  titleElement.innerText = pageTitle;
+}
 
 /**
  * This function will loop over the array of groceries that was set above and add them to the DOM.
  */
-function displayGroceries() {}
+function displayGroceries() {
+  const shoppingList = document.getElementById('groceries');
+  
+  for (let n = 0; n < groceries.length; n++) {
+    const item = document.createElement('li');
+    item.setAttribute('class', 'item');
+    item.innerText = groceries[n];
+    shoppingList.appendChild(item);
+  }
+}
 
 /**
  * This function will be called when the button is clicked. You will need to get a reference
  * to every list item and add the class completed to each one
  */
-function markCompleted() {}
+function markCompleted() {
+  const myItems = document.getElementById('groceries')
+  for (let i = 0; i < myItems.length; i++) {
+    myItems[i].setAttribute('class', 'completed')
+  }
+}
+
 
 setPageTitle();
 
