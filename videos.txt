@@ -168,3 +168,7 @@ Passcode: mm0?e$4V
 3-7 Javascript Functions
 https://techelevator.zoom.us/rec/share/OoNlY2htvrOyJsGY17XeHFo0BxX-oYNh2IC9Z1qLULb61fij1VnpWObVKL1DgKGG.hpO5yb1QHYHgXkKd
 Passcode: =x$9tO?D
+
+3-8 DOM
+https://techelevator.zoom.us/rec/share/O5EnqurdSkzr-40k7m_5E8hQ9V36HSwkv2yoHwLRo9f6-Z61RiXhCH8Bz70QxR4u.PVq1FXQ-WsBxaU_r
+Passcode: kKOgW9W?
