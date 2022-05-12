@@ -32,10 +32,7 @@ function displayGroceries() {
  * to every list item and add the class completed to each one
  */
 function markCompleted() {
-  const myItems = document.getElementById('groceries')
-  for (let i = 0; i < myItems.length; i++) {
-    myItems[i].setAttribute('class', 'completed')
-  }
+  document.getElementById('groceries').querySelectorAll('item').setAttribute('class', 'completed')
 }
 
 
