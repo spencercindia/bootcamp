@@ -172,3 +172,7 @@ Passcode: =x$9tO?D
 3-8 DOM
 https://techelevator.zoom.us/rec/share/O5EnqurdSkzr-40k7m_5E8hQ9V36HSwkv2yoHwLRo9f6-Z61RiXhCH8Bz70QxR4u.PVq1FXQ-WsBxaU_r
 Passcode: kKOgW9W?
+
+3-9 Event Handling
+https://techelevator.zoom.us/rec/share/VnvZvg7YWcQ4t82Ivfl8UINg-rGkbHRoiw382UM480U5gjitrsxGcdbp2qTWtvz2.Xd6ytMmjZEnbaHCn
+Passcode: 4%Dr5Hys
