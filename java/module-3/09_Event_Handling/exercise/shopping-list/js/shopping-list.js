@@ -36,3 +36,41 @@ function displayGroceries() {
     ul.appendChild(li);
   });
 }
+document.addEventListener('DOMContentLoaded', () => {
+  setPageTitle()
+  displayGroceries()
+
+  const items = document.querySelectorAll('li')
+  items.forEach((item) => {
+    item.addEventListener('click', (event) => {
+      if (item.className !== 'completed') {
+        item.classList.add('completed')
+      }
+    })
+    item.addEventListener('dblclick', (event) => {
+      if (item.classList == 'completed') {
+        item.classList.remove('completed')
+      }
+    })
+  })
+  const toggleAll = document.getElementById('toggleAll')
+  toggleAll.addEventListener('click', (event) => {
+    if (allItemsIncomplete) {
+      items.forEach((item) => {
+        if (item.className !== 'completed') {
+          item.classList.add('completed')
+        }
+      })
+    allItemsIncomplete = false
+    toggleAll.innerText = 'Mark All Incomplete'
+    } else {
+    items.forEach((item) => {
+      if (item.className == 'completed') {
+        item.classList.remove('completed')
+      }
+    })
+    allItemsIncomplete = true
+    toggleAll.innerText = 'Mark All Complete'
+  }
+  })
+})
