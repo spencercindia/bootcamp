@@ -176,3 +176,10 @@ Passcode: kKOgW9W?
 3-9 Event Handling
 https://techelevator.zoom.us/rec/share/VnvZvg7YWcQ4t82Ivfl8UINg-rGkbHRoiw382UM480U5gjitrsxGcdbp2qTWtvz2.Xd6ytMmjZEnbaHCn
 Passcode: 4%Dr5Hys
+
+3-10 Review
+No recording, did group exercise
+
+3-11 Intro to Vue
+https://techelevator.zoom.us/rec/share/EKd1nNiDtNhBJyCdczur_8ElpBKl-VCybhSPDAfe5f2KMzZJS6QsWikXiZJOju2E.HjxnHlXCxvyAfDvv
+Passcode: PAfw3.dg
