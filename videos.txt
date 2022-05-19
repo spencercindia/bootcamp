@@ -183,3 +183,7 @@ No recording, did group exercise
 3-11 Intro to Vue
 https://techelevator.zoom.us/rec/share/EKd1nNiDtNhBJyCdczur_8ElpBKl-VCybhSPDAfe5f2KMzZJS6QsWikXiZJOju2E.HjxnHlXCxvyAfDvv
 Passcode: PAfw3.dg
+
+3-12 Vue Event Handling
+https://techelevator.zoom.us/rec/share/jeZ3iihsZro2WgHm2Vzrjm0GEkGgMwe0ccn-8aOvElSGxXCOwj5Veih9hyFDdIIb.vlGZ22oqX7bNAE24
+Passcode: +3cvPWvh
