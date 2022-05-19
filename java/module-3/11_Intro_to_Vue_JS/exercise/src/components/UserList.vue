@@ -11,12 +11,20 @@
     </thead>
     <tbody>
       <tr>
-        <td><input type="text" id="firstNameFilter" /></td>
-        <td><input type="text" id="lastNameFilter" /></td>
-        <td><input type="text" id="usernameFilter" /></td>
-        <td><input type="text" id="emailFilter" /></td>
         <td>
-          <select id="statusFilter">
+          <input type="text" id="firstNameFilter" v-model="filter.firstName" />
+        </td>
+        <td>
+          <input type="text" id="lastNameFilter" v-model="filter.lastName" />
+        </td>
+        <td>
+          <input type="text" id="usernameFilter" v-model="filter.username" />
+        </td>
+        <td>
+          <input type="text" id="emailFilter" v-model="filter.emailAddress" />
+        </td>
+        <td>
+          <select id="statusFilter" v-model="filter.status">
             <option value="">Show All</option>
             <option value="Active">Active</option>
             <option value="Disabled">Disabled</option>
@@ -24,34 +32,25 @@
         </td>
       </tr>
       <!-- user listing goes here -->
-      <td>
-        <tr class="first-names" v-for="user in users" v-bind:key="user.id">
-          {{
-            user.firstName
-          }}
-        </tr>
-      </td>
-      <td>
-        <tr class="last-names" v-for="user in users" v-bind:key="user.id">
-          {{
-            user.lastName
-          }}
-        </tr>
-      </td>
-      <td>
-        <tr class="username" v-for="user in users" v-bind:key="user.id">
-          {{
-            user.username
-          }}
-        </tr>
-      </td>
-      <td>
-        <tr class="email" v-for="user in users" v-bind:key="user.id">
-          {{
-            user.emailAddress
-          }}
-        </tr>
-      </td>
+      <tr
+        v-for="user in filteredList"
+        v-bind:key="user.id"
+        v-bind:class="{ disabled: user.status === 'Disabled' }"
+      >
+        <td>
+          {{ user.firstName }}
+        </td>
+        <td>
+          {{ user.lastName }}
+        </td>
+        <td>
+          {{ user.username }}
+        </td>
+        <td>
+          {{ user.emailAddress }}
+        </td>
+        <td>{{ user.status }}</td>
+      </tr>
     </tbody>
   </table>
 </template>
@@ -61,6 +60,13 @@ export default {
   name: "user-list",
   data() {
     return {
+      filter: {
+        firstName: "",
+        lastName: "",
+        username: "",
+        emailAddress: "",
+        status: "",
+      },
       users: [
         {
           firstName: "John",
@@ -109,7 +115,41 @@ export default {
   },
   computed: {
     filteredList() {
-      return "";
+      let filteredUserList = this.users;
+      if (this.filter.firstName != "") {
+        filteredUserList = filteredUserList.filter((user) =>
+          user.firstName
+            .toLowerCase()
+            .includes(this.filter.firstName.toLowerCase())
+        );
+      }
+      if (this.filter.lastName != "") {
+        filteredUserList = filteredUserList.filter((user) =>
+          user.lastName
+            .toLowerCase()
+            .includes(this.filter.lastName.toLowerCase())
+        );
+      }
+      if (this.filter.username != "") {
+        filteredUserList = filteredUserList.filter((user) =>
+          user.username
+            .toLowerCase()
+            .includes(this.filter.username.toLowerCase())
+        );
+      }
+      if (this.filter.emailAddress != "") {
+        filteredUserList = filteredUserList.filter((user) =>
+          user.emailAddress
+            .toLowerCase()
+            .includes(this.filter.emailAddress.toLowerCase())
+        );
+      }
+      if (this.filter.status != "") {
+        filteredUserList = filteredUserList.filter(
+          (user) => user.status === this.filter.status
+        );
+      }
+      return filteredUserList;
     },
   },
 };
