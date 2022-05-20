@@ -1,19 +1,14 @@
 <template>
   <div class="card">
-    <div>
-      <h2 class="book-title">{{ book.title }}</h2>
-    </div>
-    <div>
-      <img
-        v-if="book.isbn"
-        v-bind:src="
-          'http://covers.openlibrary.org/b/isbn/' + book.isbn + '-M.jpg'
-        "
-      />
-    </div>
-    <div>
-      <h3 class="book-author">{{ book.author }}</h3>
-    </div>
+    <!-- <book-card v-for="book in books" v-bind:key="book.id"></book-card> -->
+    <h2 class="book-title">{{ book.title }}</h2>
+    <img
+      v-if="book.isbn"
+      v-bind:src="
+        'http://covers.openlibrary.org/b/isbn/' + book.isbn + '-M.jpg'
+      "
+    />
+    <h3 class="book-author">{{ book.author }}</h3>
   </div>
 </template>
 
