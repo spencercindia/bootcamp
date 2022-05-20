@@ -201,6 +201,7 @@ export default {
           }
         });
       });
+      this.clearSelectedUsers();
     },
     disableSelectedUsers() {
       this.selectedUserIDs.forEach((id) => {
@@ -210,6 +211,7 @@ export default {
           }
         });
       });
+      this.clearSelectedUsers();
     },
     deleteSelectedUsers() {
       this.selectedUserIDs.forEach((id) => {
@@ -219,6 +221,10 @@ export default {
           }
         });
       });
+      this.clearSelectedUsers();
+    },
+    clearSelectedUsers() {
+      this.selectedUserIDs = [];
     },
   },
   computed: {
@@ -265,7 +271,6 @@ export default {
   },
 };
 </script>
-
 <style scoped>
 table {
   margin-top: 20px;
