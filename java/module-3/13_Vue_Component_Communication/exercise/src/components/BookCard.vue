@@ -1,14 +1,27 @@
 <template>
   <div class="card">
-    <!-- <book-card v-for="book in books" v-bind:key="book.id"></book-card> -->
-    <h2 class="book-title">{{ book.title }}</h2>
+    <h2 class="book-title">{{ books.title }}</h2>
     <img
-      v-if="book.isbn"
+      v-if="books.isbn"
       v-bind:src="
-        'http://covers.openlibrary.org/b/isbn/' + book.isbn + '-M.jpg'
+        'http://covers.openlibrary.org/b/isbn/' + books.isbn + '-M.jpg'
       "
     />
-    <h3 class="book-author">{{ book.author }}</h3>
+    <h3 class="book-author">{{ books.author }}</h3>
+    <input
+      class="mark-read"
+      v-if="books.read"
+      type="button"
+      value="Mark Unread"
+      v-on:click="mark(books.id)"
+    />
+    <input
+      class="mark-unread"
+      v-else
+      type="button"
+      value="Mark Read"
+      v-on:click="mark(books.id)"
+    />
   </div>
 </template>
 
@@ -16,6 +29,11 @@
 export default {
   name: "book-card",
   props: ["books"],
+  methods: {
+    mark(id) {
+      this.$store.commit("FLIP_READ", id);
+    },
+  },
 };
 </script>
 

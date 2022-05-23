@@ -1,13 +1,15 @@
 <template>
-  <div
-    class="book-container"
-    v-for="book in this.$store.state.books"
-    v-bind:key="book.isbn"
-  ></div>
+  <div class="book-container">
+    <BookCard
+      v-for="book in this.$store.state.books"
+      v-bind:key="book.id"
+      v-bind:books="book"
+    ></BookCard>
+  </div>
 </template>
 
 <script>
-import BookCard from "../components/BookCard.vue";
+import BookCard from "./BookCard.vue";
 
 export default {
   name: "reading-list",
