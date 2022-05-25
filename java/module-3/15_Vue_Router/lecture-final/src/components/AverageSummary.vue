@@ -11,12 +11,12 @@ export default {
   methods: {
     updateFilter() {
       this.$store.commit("UPDATE_FILTER", 0);
-    }
+    },
   },
   computed: {
     averageRating() {
       const reviews = this.$store.state.products.find(
-        p => p.id == this.$store.state.activeProduct
+        (p) => p.id == this.$store.state.activeProduct
       ).reviews;
       let sum = reviews.reduce((currentSum, review) => {
         return currentSum + review.rating;
@@ -26,7 +26,7 @@ export default {
       } else {
         return (sum / reviews.length).toFixed(2);
       }
-    }
-  }
+    },
+  },
 };
 </script>
