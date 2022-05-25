@@ -1,5 +1,8 @@
 <template>
-  <div></div>
+  <div>
+    <best-seller-list />
+    <new-releases-list />
+  </div>
 </template>
 
 <script>
@@ -8,7 +11,7 @@ import NewReleasesList from "../components/NewReleasesList.vue";
 
 export default {
   name: "Home",
-  components: { NewReleasesList, BestSellerList },
+  components: { BestSellerList, NewReleasesList },
 };
 </script>
 <style scoped>
