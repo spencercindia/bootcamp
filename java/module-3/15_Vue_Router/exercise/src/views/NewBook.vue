@@ -1,13 +1,13 @@
 <template>
   <div class="new-book-form">
-    <NewBookFrom></NewBookFrom>
+    <new-book-form />
   </div>
 </template>
 
 <script>
 import NewBookForm from "../components/NewBookForm.vue";
 export default {
-  name: "NewBook",
+  name: "new-book",
   components: { NewBookForm },
 };
 </script>

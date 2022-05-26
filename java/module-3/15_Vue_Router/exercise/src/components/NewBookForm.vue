@@ -22,7 +22,7 @@
       placeholder="ISBN"
       v-model="book.isbn"
     />
-    <button v-on:click="saveBook">Save</button>
+    <button>Save</button>
   </form>
 </template>
 
@@ -48,6 +48,7 @@ export default {
         read: false,
         isbn: "",
       };
+      this.$router.push("/myBooks");
     },
   },
 };
