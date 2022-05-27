@@ -8,13 +8,13 @@
 
 <script>
 export default {
-  name: 'topic-list',
+  name: "topic-list",
   data() {
     return {
-      topics: []
-    }
-  }
-}
+      topics: [],
+    };
+  },
+};
 </script>
 
 <style>
